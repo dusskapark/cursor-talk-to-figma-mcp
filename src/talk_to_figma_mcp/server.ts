@@ -997,7 +997,7 @@ server.tool(
   "get_annotations",
   "Get all annotations in the current document or specific node",
   {
-    nodeId: z.string().optional().describe("Optional node ID to get annotations for specific node"),
+    nodeId: z.string().describe("node ID to get annotations for specific node"),
     includeCategories: z.boolean().optional().default(true).describe("Whether to include category information")
   },
   async ({ nodeId, includeCategories }: any) => {
@@ -2699,7 +2699,7 @@ type CommandParams = {
     text: Array<{ nodeId: string; text: string }>;
   };
   get_annotations: {
-    nodeId?: string;
+    nodeId: string;
     includeCategories?: boolean;
   };
   set_annotation: {
